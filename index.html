@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="noteApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Notes</title>
+    <link  href="http://fonts.googleapis.com/css?family=Reenie+Beanie:regular" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/Users/aMoveableFeast/devMTN/memo/styles/base.css">
+    <link rel="stylesheet" href="/Users/aMoveableFeast/devMTN/memo/styles/styles.css">
+</head>
+<body ng-controller="MainCtrl">
+
+<input type="text" ng-model="note.title" placeholder="Title">
+<input type="text" ng-model="note.content" placeholder="Add notes here">
+<button ng-click="saveNote(note)">Add Note</button>
+
+<ul>
+    <li ng-repeat="note in notes">
+        <a href="#">
+            <h2> {{ note.title }} </h2>
+            <p> {{ note.content }} </p>
+        </a>
+
+    </li>
+
+</ul>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script src="scripts/app.js"></script>
+<script src="scripts/controllers/MainCtrl.js"></script>
+<script src="scripts/services/noteService.js"></script>
+</body>
+</html>
